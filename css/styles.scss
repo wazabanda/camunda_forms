@@ -1,0 +1,46 @@
+@import 'reset';
+@import 'spacing';
+@import 'layout';
+@import 'typesetting';
+@import 'color';
+@import 'typography';
+@import 'border_radius';
+@import 'buttons';
+@import 'input';
+@import 'enhanced_feedback';
+
+body{
+  @include body-text;
+  background-color: $dhGray;
+}
+.hidden{
+  display: none;
+}
+form{
+  width: 100%;
+}
+.page-container{
+  width: 328px;
+  margin: 0 auto;
+  margin-top: $sizing-lg;
+  // border: 1px solid $dhCharcoal;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+
+
+
+  .button-spacing{
+    margin-top: $spacing-lg;
+  }
+  .sub-text{
+    font-size: $font-size-sm;
+    color: $dhCharcoal;
+    margin-top: $font-size-lg;
+  }
+}
+
+
+

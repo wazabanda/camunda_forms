@@ -1,0 +1,382 @@
+/* Box sizing border-box for all elements */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Noto+Sans+JP:wght@300;500&family=Roboto&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding for most elements */
+body,
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles (bullet points, numbers) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set default styles for the body */
+body {
+  line-height: 1.6;
+}
+
+/* Remove styles for headings inside sections and articles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* Remove styles for form elements */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Remove hyperlink styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove styles for tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Ensure images are responsive and don't overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reset form styles */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+/* Reset button and input types to not inherit font styles */
+button,
+input {
+  overflow: visible;
+}
+
+/* Address inconsistent appearance in some older browsers */
+select {
+  vertical-align: middle;
+}
+
+/* Reset the default button styling */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Remove inner spacing in Firefox */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+/* Reset anchor styles for visited, unvisited, and hover states */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Set default cursor for interactive elements */
+button,
+input,
+select,
+textarea {
+  cursor: pointer;
+}
+
+/* Make sure inputs don't inherit the font-size in all browsers */
+input {
+  font-size: 1em;
+}
+
+/* Allow resizing textareas vertically */
+textarea {
+  overflow: auto;
+}
+
+/* Reset the default appearance of fieldset */
+fieldset {
+  border: 1px solid #a0a0a0;
+  margin: 0;
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/* Remove padding for submit buttons in IE */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+div, form, input, button {
+  width: 100%;
+}
+
+main {
+  padding: 16px;
+}
+
+/* Set a pleasant font family */
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+/* Define a good line height for readability */
+body {
+  line-height: 1.6;
+}
+
+/* Adjust heading styles for hierarchy and readability */
+h1 {
+  font-size: 22px;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 15px;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 12px;
+  margin-bottom: 0.5em;
+}
+
+/* Set a comfortable font size for paragraphs */
+p {
+  font-size: 16px;
+  margin-bottom: 1.2em;
+}
+
+/* Style links for better visibility */
+a {
+  color: #007BFF;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Adjust the color of text for better contrast */
+body {
+  color: #333;
+}
+
+button {
+  font-family: "EB Garamond", serif;
+  margin: 0;
+  padding: 0;
+  border: none;
+  padding-inline: 16px !important;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-weight: 600;
+  background-color: #000 !important;
+  color: #ffffff;
+  display: inline;
+  min-width: fit-content !important;
+  padding-block: 8px !important;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button.btn-disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+button.btn-large {
+  height: 64px;
+  font-size: 16px;
+}
+
+button.btn-block {
+  display: block;
+}
+
+button.btn-full-width {
+  width: 100%;
+}
+
+button.btn-plain {
+  background-color: transparent !important;
+  color: #000;
+  text-decoration: underline;
+}
+
+button:hover {
+  filter: invert(8%);
+}
+
+button:active {
+  filter: saturate(300%);
+}
+
+.select {
+  background-color: #a0aec0;
+}
+
+.rounded-input {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 8px;
+}
+
+.rounded-input label, .label {
+  margin-bottom: 4px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.rounded-input input, .rounded-input select, .rounded-input textarea {
+  background-color: inherit;
+  width: 100%;
+  border: 0.5px solid #a0aec0;
+  border-radius: 0;
+  background-color: #FFF8F8;
+  padding-block: 8px;
+}
+
+.rounded-input input:hover, .rounded-input select:hover, .rounded-input textarea:hover {
+  background-color: #e9e2e2;
+}
+
+.rounded-input input:focus, .rounded-input select:focus, .rounded-input textarea:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: #38a169;
+}
+
+.rounded-input input:focus ~ label, .rounded-input select:focus ~ label, .rounded-input textarea:focus ~ label {
+  color: #38a169;
+}
+
+.submitted .rounded-input input:required:invalid ~ label, .submitted .rounded-input select:required:invalid ~ label, .submitted .rounded-input textarea:required:invalid ~ label {
+  color: #e53e3e;
+}
+
+.submitted .rounded-input input:required:invalid, .submitted .rounded-input select:required:invalid, .submitted .rounded-input textarea:required:invalid {
+  border: 4px solid #e53e3e;
+}
+
+.submitted .rounded-input input:required:valid, .submitted .rounded-input select:required:valid, .submitted .rounded-input textarea:required:valid {
+  border: 4px solid #ecc94b;
+}
+
+.rounded-input textarea {
+  resize: none;
+  overflow-y: hidden;
+  /* min-height: var(--w-lg); */
+}
+
+.enhanced-feedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.enhanced-feedback .symbol {
+  width: 64px;
+}
+.enhanced-feedback .action {
+  padding-top: 32px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #F4F4F4;
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  width: 100%;
+}
+
+.page-container {
+  width: 328px;
+  margin: 0 auto;
+  margin-top: 64px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+.page-container .button-spacing {
+  margin-top: 16px;
+}
+.page-container .sub-text {
+  font-size: 12px;
+  color: #4a5568;
+  margin-top: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

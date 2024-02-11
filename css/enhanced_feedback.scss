@@ -1,0 +1,14 @@
+.enhanced-feedback{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .symbol{
+    width: 64px;
+  }
+  .action{
+    padding-top: $sizing-md;
+  }
+
+}

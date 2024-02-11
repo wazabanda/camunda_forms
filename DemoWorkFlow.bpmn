@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0brvx14" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.19.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+  <bpmn:process id="DemoWorkFlow" isExecutable="true" camunda:historyTimeToLive="180">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0onbs9g</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0onbs9g" sourceRef="StartEvent_1" targetRef="Activity_0ol98ia" />
+    <bpmn:sequenceFlow id="Flow_09sifmx" sourceRef="Activity_0ol98ia" targetRef="Activity_0mxqpgo" />
+    <bpmn:sequenceFlow id="Flow_0kyvx4u" sourceRef="Activity_0mxqpgo" targetRef="Activity_0c2ixip" />
+    <bpmn:endEvent id="Event_0prhibl">
+      <bpmn:incoming>Flow_1uhz2n8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1uhz2n8" sourceRef="Activity_0c2ixip" targetRef="Event_0prhibl" />
+    <bpmn:userTask id="Activity_0ol98ia" name="Office 1" camunda:formRef="demowf1" camunda:formRefBinding="latest">
+      <bpmn:extensionElements />
+      <bpmn:incoming>Flow_0onbs9g</bpmn:incoming>
+      <bpmn:outgoing>Flow_09sifmx</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0mxqpgo" name="Office 2" camunda:formRef="demowf2" camunda:formRefBinding="latest">
+      <bpmn:incoming>Flow_09sifmx</bpmn:incoming>
+      <bpmn:outgoing>Flow_0kyvx4u</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0c2ixip" name="Office 3" camunda:formRef="demowf3" camunda:formRefBinding="latest">
+      <bpmn:incoming>Flow_0kyvx4u</bpmn:incoming>
+      <bpmn:outgoing>Flow_1uhz2n8</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="DemoWorkFlow">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0prhibl_di" bpmnElement="Event_0prhibl">
+        <dc:Bounds x="722" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ipv9dm_di" bpmnElement="Activity_0ol98ia">
+        <dc:Bounds x="240" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14w8iv4_di" bpmnElement="Activity_0mxqpgo">
+        <dc:Bounds x="400" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1451ayg_di" bpmnElement="Activity_0c2ixip">
+        <dc:Bounds x="560" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0onbs9g_di" bpmnElement="Flow_0onbs9g">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="240" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09sifmx_di" bpmnElement="Flow_09sifmx">
+        <di:waypoint x="340" y="120" />
+        <di:waypoint x="400" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0kyvx4u_di" bpmnElement="Flow_0kyvx4u">
+        <di:waypoint x="500" y="120" />
+        <di:waypoint x="560" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uhz2n8_di" bpmnElement="Flow_1uhz2n8">
+        <di:waypoint x="660" y="120" />
+        <di:waypoint x="722" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

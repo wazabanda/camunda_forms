@@ -1,0 +1,171 @@
+/* Box sizing border-box for all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding for most elements */
+body,
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove list styles (bullet points, numbers) */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Set default styles for the body */
+body {
+    line-height: 1.6;
+}
+
+/* Remove styles for headings inside sections and articles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Remove styles for form elements */
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Remove hyperlink styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove styles for tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Ensure images are responsive and don't overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Reset form styles */
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+/* Reset button and input types to not inherit font styles */
+button,
+input {
+    overflow: visible;
+}
+
+/* Address inconsistent appearance in some older browsers */
+select {
+    vertical-align: middle;
+}
+
+/* Reset the default button styling */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Remove inner spacing in Firefox */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+}
+
+/* Reset anchor styles for visited, unvisited, and hover states */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Set default cursor for interactive elements */
+button,
+input,
+select,
+textarea {
+    cursor: pointer;
+}
+
+/* Make sure inputs don't inherit the font-size in all browsers */
+input {
+    font-size: 1em;
+}
+
+/* Allow resizing textareas vertically */
+textarea {
+    overflow: auto;
+}
+
+/* Reset the default appearance of fieldset */
+fieldset {
+    border: 1px solid #a0a0a0;
+    margin: 0;
+    padding: 0.35em 0.75em 0.625em;
+}
+
+/* Remove padding for submit buttons in IE */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+div, form, input, button{
+    width: 100%;
+}

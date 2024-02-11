@@ -1,0 +1,45 @@
+
+
+button {
+  @include serif;
+  margin: 0;
+  padding:0;
+  border: none;
+  padding-inline: $spacing-lg !important;
+  font-size: $font-size-lg;
+  box-sizing: border-box;
+  font-weight: $font-weight-bold;
+  background-color: $dhBlack !important;
+  color: $dhSurface;
+  display: inline;
+  min-width: fit-content !important;
+  padding-block: $spacing-md !important;
+  cursor: pointer;
+  border-radius: $radius-sm;
+}
+button.btn-disabled{
+  pointer-events: none;
+  opacity: 0.6;
+}
+button.btn-large{
+  height: $sizing-lg;
+  font-size: $font-size-lg;
+}
+button.btn-block{
+  display: block;
+}
+button.btn-full-width{
+  width: 100%;
+}
+button.btn-plain{
+  background-color: transparent !important;
+  color: $dhBlack;
+  text-decoration: underline;
+
+}
+button:hover{
+  filter: invert(8%);
+}
+button:active{
+  filter: saturate(300%);
+}

@@ -1,0 +1,52 @@
+
+
+.select{
+  background-color: $dhCoolGray;
+}
+.rounded-input{
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: $spacing-md;
+}
+.rounded-input label, .label{
+  margin-bottom: $spacing-sm;
+  font-size: $font-size-md;
+  text-align: left;
+}
+.rounded-input input, .rounded-input select, .rounded-input textarea {
+  background-color: inherit;
+  width: 100%;
+  border: 0.5px solid $dhCoolGray;
+  border-radius: 0;
+  background-color: #FFF8F8;
+  padding-block: $spacing-md;
+}
+
+.rounded-input input:hover, .rounded-input select:hover, .rounded-input textarea:hover {
+  background-color: #e9e2e2;
+}
+.rounded-input input:focus,  .rounded-input select:focus, .rounded-input textarea:focus{
+  outline: none;
+  background-color: #ffffff;
+  border-color: $dhGreen;
+}
+.rounded-input input:focus ~ label, .rounded-input select:focus ~ label, .rounded-input textarea:focus ~ label {
+  color: $dhGreen;
+}
+.submitted .rounded-input input:required:invalid ~ label, .submitted .rounded-input select:required:invalid ~ label, .submitted .rounded-input textarea:required:invalid ~ label {
+  color: $dhRed;
+}
+.submitted .rounded-input input:required:invalid, .submitted .rounded-input select:required:invalid, .submitted .rounded-input textarea:required:invalid {
+  border: $spacing-sm solid $dhRed; 
+}
+
+.submitted .rounded-input input:required:valid, .submitted .rounded-input select:required:valid, .submitted .rounded-input textarea:required:valid {
+  border: $spacing-sm solid $dhYellow; 
+}
+
+.rounded-input textarea{
+  // max-width: calc($sizing-md * 2);
+  resize: none;
+  overflow-y: hidden;
+  /* min-height: var(--w-lg); */
+}

@@ -1,0 +1,65 @@
+$font-size-xlg: 22px;
+$font-size-lg: 16px;
+$font-size-md: 15px;
+$font-size-sm: 12px;
+
+$font-weight-bolder: 800;
+$font-weight-bold: 600;
+$font-weight-regular: 500;
+$font-weight-light: 300;
+$font-weight-xlight: 100;
+
+
+/* Set a pleasant font family */
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Define a good line height for readability */
+body {
+  line-height: 1.6;
+}
+
+/* Adjust heading styles for hierarchy and readability */
+h1 {
+  font-size: $font-size-xlg;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: $font-size-lg;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: $font-size-md;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: $font-size-sm;
+  margin-bottom: 0.5em;
+}
+
+
+/* Set a comfortable font size for paragraphs */
+p {
+  font-size: $font-size-lg;
+  margin-bottom: 1.2em;
+}
+
+/* Style links for better visibility */
+a {
+  color: #007BFF;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Adjust the color of text for better contrast */
+body {
+  color: #333;
+}
+

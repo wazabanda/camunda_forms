@@ -1,0 +1,74 @@
+{
+  "components": [
+    {
+      "label": "Proposal",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1vkkevn",
+        "columns": null
+      },
+      "id": "Field_0lt2ngu",
+      "key": "proposal"
+    },
+    {
+      "label": "Quantity",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1166b1h",
+        "columns": null
+      },
+      "id": "Field_1971hzt",
+      "key": "quantity"
+    },
+    {
+      "label": "Description",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1sz5wst",
+        "columns": null
+      },
+      "id": "Field_1df1exk",
+      "key": "description"
+    },
+    {
+      "label": "Comment",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ctkmmb",
+        "columns": null
+      },
+      "id": "Field_0wij2jw",
+      "key": "endComment"
+    },
+    {
+      "values": [
+        {
+          "label": "Accept",
+          "value": "accept"
+        },
+        {
+          "label": "Decline",
+          "value": "decline"
+        }
+      ],
+      "label": "Status",
+      "type": "select",
+      "layout": {
+        "row": "Row_1vval9z",
+        "columns": null
+      },
+      "id": "Field_1ljkg8y",
+      "key": "status",
+      "defaultValue": "<none>"
+    }
+  ],
+  "type": "default",
+  "id": "demowf3",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.19.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 14
+}

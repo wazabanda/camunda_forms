@@ -1,0 +1,43 @@
+{
+  "components": [
+    {
+      "label": "Proposal",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1vkkevn",
+        "columns": null
+      },
+      "id": "Field_0lt2ngu",
+      "key": "proposal"
+    },
+    {
+      "label": "Quantity",
+      "type": "number",
+      "layout": {
+        "row": "Row_1xdbt06",
+        "columns": null
+      },
+      "id": "Field_0et5s8g",
+      "key": "quantity"
+    },
+    {
+      "label": "Description",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0hckzs0",
+        "columns": null
+      },
+      "id": "Field_0q9t0aa",
+      "key": "description"
+    }
+  ],
+  "type": "default",
+  "id": "demowf2",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.19.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 14
+}
