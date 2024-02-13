@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>File uploaded successfully</p>
                 <img class='symbol' src='dist/img/ok.svg' alt=''>
                 <div class='action'>";
-                echo '<form hx-get="rideform.php?pid=' . $processInstanceId . '" hx-target="#main-content" method="get">';
+                echo '<form hx-get="autoform.php?pid=' . $processInstanceId . '" hx-target="#main-content" method="get">';
                 echo "<button type='submit' class='btn-full-width btn-plain'>Next Task</button>";
                 echo "</form>
                 </div>

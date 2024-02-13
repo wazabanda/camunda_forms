@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($httpStatusCode == 200) {
         echo "Task completed successfully.";
         echo "Next Task";
-        echo '<form hx-get="rideform.php?pid='.$processInstanceId.'" hx-target="#main-content" method="get">';
+        echo '<form hx-get="autoform.php?pid='.$processInstanceId.'" hx-target="#main-content" method="get">';
         echo '<button type="submit">Start Process</button>';
         echo '</form>';
     } else {

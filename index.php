@@ -20,10 +20,10 @@
             // var_dump($_GET);
             if (isset($_GET["pid"])) {
 
-                echo '<form hx-get="rideform.php?pid=' . $_GET['pid'] . '" hx-target="#main-content" method="get">';
+                echo '<form hx-get="autoform.php?pid=' . $_GET['pid'] . '" hx-target="#main-content" method="get">';
             } else {
 
-                echo '<form hx-get="rideform.php" hx-target="#main-content" method="get">';
+                echo '<form hx-get="autoform.php" hx-target="#main-content" method="get">';
             }
             ?>
             <button type="submit" class="btn-full-width">Start Process</button>

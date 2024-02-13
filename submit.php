@@ -207,12 +207,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($httpStatusCode == 200) {
         echo "
         <div class='enhanced-feedback'>
-        <h1>Congraturations</h1>
-        <p>Task completed successfully</p>
-        <img class='symbol' src='dist/img/ok.svg' alt=''>
+        <h1>Congraturations</h1>";
+        if(isset($_POST['save']))
+        {
+            
+            echo "<p>Task saved successfully</p>";
+        }else{
+
+            echo "<p>Task completed successfully</p>";
+        }
+        echo "<img class='symbol' src='dist/img/ok.svg' alt=''>
         <div class='action'>";
-        echo '<form hx-get="rideform.php?pid=' . $processInstanceId . '" hx-target="#main-content" method="get">';
-        echo "<button type='submit' class='btn-full-width btn-plain'>Next Task</button>";
+        echo '<form hx-get="autoform.php?pid=' . $processInstanceId . '" hx-target="#main-content" method="get">';
+        if(isset($_POST['save']))
+        {
+            echo "<button type='submit' class='btn-full-width btn-plain'>Back to Task</button>";
+        }else{
+            echo "<button type='submit' class='btn-full-width btn-plain'>Next Task</button>";
+        }
+            
         echo "</form>
         </div>
         </div>";

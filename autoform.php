@@ -1,6 +1,6 @@
 <?php
 
-$processDefinitionKey = 'DemoWorkFlow';
+$processDefinitionKey = 'LevyApplication';
 $camundaApiUrl = 'http://localhost:8080/engine-rest';
 
 // Create a new instance of a process
@@ -177,7 +177,7 @@ function fetchTaskAttachments($taskId) {
 // Check if form data is available
 if (isset($formData['components'])) {
     // Render the form using PHP and HTML
-
+    
     // var_dump($formData['components']);
 ?>
     <!DOCTYPE html>
@@ -196,40 +196,70 @@ if (isset($formData['components'])) {
         <div id="part-1">
     
         <form id="post_form" hx-post="submit.php" method="post">
-        <input type="hidden" name="processInstanceId" value="<?= $processInstanceId ?>">
-            <input type="hidden" name="processTaskId" value="<?= $taskId ?>">
-            <?php foreach ($formData["components"] as $component) : ?>
-            <div class="rounded-input">
-                <?php if ($component['type'] === 'textfield') : ?>
-                    <input type="text" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" value="<?= $variables[$component['key']]['value'] ?>" required>
-                <?php elseif ($component['type'] === 'number') : ?>
-                    <input type="number" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" value="<?= $variables[$component['key']]['value'] ?>" required>
-                <?php elseif ($component['type'] === 'checkbox') : ?>
-                    <input type="checkbox" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" <?php echo $variables[$component['key']]['value'] ? 'checked' : ''; ?>>
-                <?php elseif ($component['type'] === 'select') : ?>
-                    <select name="<?= $component['key'] ?>" id="<?= $component['id'] ?>">
-                        <?php foreach ($component['values'] as $option) : ?>
-                            <option value="<?= $option['value'] ?>" <?php echo $option['value'] == $variables[$component['key']]['value'] ? 'selected' : ''; ?>>
-                                <?= $option['label'] ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                <?php elseif ($component['type'] === 'datefield') : ?>
-                    <input type="date" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" value="<?= $variables[$component['key']]['value'] ?>" required>
+    <input type="hidden" name="processInstanceId" value="<?= $processInstanceId ?>">
+    <input type="hidden" name="processTaskId" value="<?= $taskId ?>">
+    
+    <?php foreach ($formData["components"] as $component) : ?>
+    <div class="rounded-input">
+        <?php 
+        // Check if 'props' key exists and is not empty
+        if (isset($component['properties']['props']) && !empty($component['properties']['props'])) {
+            // Split the 'props' string into an array of properties
+            $componentProps = explode(',', $component['properties']['props']);
+            // Initialize variable to store properties as HTML attributes
+            $htmlProps = '';
+            // Loop through each property and add it to the HTML element
+            foreach ($componentProps as $prop) {
+                // Trim any whitespace
+                $prop = trim($prop);
+                // Add the property to the HTML attributes
+                $htmlProps .= " $prop"; // Add the property directly
+            }
+        }
+        ?>
+        <?php if ($component['type'] === 'textfield') : ?>
+            <?php if(isset($component['properties']) && isset($component['properties']['date_time'])) : ?>
+                <input type="date" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" value="<?= $variables[$component['key']]['value'] ?>"<?= $htmlProps ?> required>
+            <?php else : ?>
+                <input type="text" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" value="<?= $variables[$component['key']]['value'] ?>"<?= $htmlProps ?> required>
+            <?php endif; ?>
+        <?php elseif ($component['type'] === 'number') : ?>
+            <input type="number" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" value="<?= $variables[$component['key']]['value'] ?>"<?= $htmlProps ?> required>
+        <?php elseif ($component['type'] === 'checkbox') : ?>
+            <input type="checkbox" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" <?php echo $variables[$component['key']]['value'] ? 'checked' : ''; ?>>
+        <?php elseif ($component['type'] === 'select') : ?>
+            <?php if(isset($component['properties']['readonly']) && $component['properties']['readonly']) : ?>
+                <?php foreach ($component['values'] as $option) : ?>
+                        <?php if($option['value'] == $variables[$component['key']]['value']):?>
+                        <input type="text" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" value="<?php echo $option['value']; ?>" readonly>
+                        <?php endif;?>
+                    <?php endforeach; ?>
+            <?php else : ?>
+                <select name="<?= $component['key'] ?>" id="<?= $component['id'] ?>"<?= $htmlProps ?>>
+                    <?php foreach ($component['values'] as $option) : ?>
+                        <option value="<?= $option['value'] ?>" <?php echo $option['value'] == $variables[$component['key']]['value'] ? 'selected' : ''; ?>>
+                            <?= $option['label'] ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            <?php endif; ?>
+        <?php elseif ($component['type'] === 'datefield') : ?>
+            <input type="date" name="<?= $component['key'] ?>" id="<?= $component['id'] ?>" value="<?= $variables[$component['key']]['value'] ?>"<?= $htmlProps ?> required>
+        <?php elseif ($component['type'] === 'text') : ?>
+            <label for="<?= $component['key'] ?>"<?= $htmlProps ?>><?= $component['text'] ?></label>
+        <?php endif; ?>
+        
+        <label for="<?= $component['key'] ?>"><?= $component['label'] ?>:</label>
+    </div>
+<?php endforeach; ?>
 
-                <?php endif; ?>
-                <label for="<?= $component['key'] ?>"><?= $component['label'] ?>:</label>
+    
+    <button type="button" class="btn-full-width button-spacing" onclick="submitForm('save')">Save</button>
+    <button type="button" class="btn-full-width button-spacing" onclick="submitForm('submit')">Submit</button>
+</form>
 
-            </div>
-            <?php endforeach; ?>
 
-            
-            
-                
-                
-            <button type="button" class="btn-full-width button-spacing" onclick="submitForm('save')">Save</button>
-            <button type="button" class="btn-full-width button-spacing" onclick="submitForm('submit')">Submit</button>
-        </form>
+
 
       <div>
         <p class="sub-text">
